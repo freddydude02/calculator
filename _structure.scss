@@ -1,0 +1,94 @@
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+.page {
+    @include flex(unset, center, center);
+    height: 100vh;
+    width: 100vw;
+    background-color: darkslategray;
+}
+.calc {
+    display: grid;
+    gap: 10px;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    background-color: rgb(59, 52, 52);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "disp disp disp disp"
+        " ac ac slash time"
+        " seven eight nine minus"
+        "four five six plus"
+        "one two three equals"
+        "zit zit dott equals";
+    &__btn {
+        background-color: yellow;
+        &--1 {
+            grid-area: one;
+        }
+        &--2 {
+            grid-area: two;
+        }
+        &--3 {
+            grid-area: three;
+        }
+        &--4 {
+            grid-area: four;
+        }
+        &--5 {
+            grid-area: five;
+        }
+        &--6 {
+            grid-area: six;
+        }
+        &--7 {
+            grid-area: seven;
+        }
+        &--8 {
+            grid-area: eight;
+        }
+        &--9 {
+            grid-area: nine;
+        }
+        &--0 {
+            grid-area: zit;
+        }
+        &--dot {
+            grid-area: dott;
+        }
+        &--equals {
+            grid-area: equals;
+            background-color: steelblue;
+        }
+        &--slash {
+            grid-area: slash;
+            background-color: gray;
+        }
+        &--times {
+            grid-area: time;
+            background-color: gray;
+        }
+        &--minus {
+            grid-area: minus;
+            background-color: gray;
+        }
+        &--plus {
+            grid-area: plus;
+            background-color: gray;
+        }
+        &--ac {
+            grid-area: ac;
+            background-color: maroon;
+        }
+    }
+    &__display {
+        grid-area: disp;
+        background-color: rgb(77, 75, 75);
+        margin-top: 30px;
+    }
+}
