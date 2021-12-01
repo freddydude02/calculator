@@ -1,0 +1,14 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+.page {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+.btn {
+    height: 20%;
+    width: 20%;
+    background-color: red;
+}

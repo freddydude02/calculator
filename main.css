@@ -3,6 +3,10 @@
   padding: 0px;
 }
 
+h1 {
+  font-size: 5vw;
+}
+
 .page {
   display: flex;
   flex-direction: unset;
@@ -14,11 +18,11 @@
 }
 
 .calc {
-  display: grid;
   gap: 10px;
   height: 100%;
   width: 100%;
   padding: 30px;
+  display: grid;
   background-color: #3b3434;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -26,6 +30,10 @@
 }
 .calc__btn {
   background-color: yellow;
+  display: flex;
+  flex-direction: unset;
+  justify-content: center;
+  align-items: center;
 }
 .calc__btn--1 {
   grid-area: one;
@@ -82,10 +90,14 @@
 }
 .calc__btn--ac {
   grid-area: ac;
-  background-color: maroon;
+  background-color: crimson;
 }
 .calc__display {
   grid-area: disp;
   background-color: #4d4b4b;
   margin-top: 30px;
+}
+
+.active {
+  background-color: cyan;
 }
