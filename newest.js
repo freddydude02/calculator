@@ -4,6 +4,9 @@ const onPageLoad = () => {
     const calculator = document.querySelector(".calc");
     const allBtn = document.querySelectorAll(".calc__btn");
     const display = document.querySelector(".calc__display");
+    const firstValue = calculator.dataset.firstValue;
+    const operator = calculator.dataset.operator;
+    const SecondValue = display.innerText;
 
     const calculate = (n1, operator, n2) => {
         let result;
@@ -42,9 +45,6 @@ const onPageLoad = () => {
         calculator.dataset.firstValue = 0;
     };
     const equalsFunc = (clickedBtn) => {
-        const firstValue = calculator.dataset.firstValue;
-        const operator = calculator.dataset.operator;
-        const SecondValue = display.innerText;
         calculate(firstValue, operator, SecondValue);
     };
     const dotFunc = (clickedBtn) => {
