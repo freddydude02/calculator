@@ -1,4 +1,4 @@
-export default calculate = (n1, operator, n2) => {
+export const calculate = (n1, operator, n2) => {
     let result;
     if (operator === "plus") {
         result = parseFloat(n1) + parseFloat(n2);

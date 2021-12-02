@@ -1,7 +1,5 @@
+// import { calculate } from "./calculate.js";
 const print = (item) => console.log(item);
-// print("hi");
-
-// start!:
 
 const calculator = document.querySelector(".calc");
 
@@ -10,31 +8,42 @@ const btn = calculator.querySelectorAll(".calc__btn");
 const display = document.querySelector(".calc__display");
 print(display);
 
+const calculate = (n1, operator, n2) => {
+    let result;
+    if (operator === "plus") {
+        result = parseFloat(n1) + parseFloat(n2);
+    } else if (operator === "minus") {
+        result = parseFloat(n1) - parseFloat(n2);
+    } else if (operator === "times") {
+        result = parseFloat(n1) * parseFloat(n2);
+    } else if (operator === "slash") {
+        result = parseFloat(n1) / parseFloat(n2);
+    }
+    print(result);
+    return result;
+};
+
 btn.forEach((item) =>
-    item.addEventListener("click", (e) => {
-        const key = e.target;
+    item.addEventListener("click", () => {
+        const action = item.dataset.action;
 
-        const action = key.dataset.action;
+        const check = item.localName;
 
-        const check = key.localName;
+        const keyContent = item.innerText;
 
-        const keyContent = key.textContent;
-
-        const displayContent = display.textContent;
+        const displayContent = display.innerText;
 
         const previousKeyType = calculator.dataset.previousKeyType;
 
-        import calculate from "./calculate";
-
         if (check !== "h1") {
             btn.forEach((item) => item.classList.remove("active"));
-            print(display.textContent);
+            print(display.innerText);
 
             if (!action) {
                 if (displayContent === "0" || previousKeyType === "operator") {
-                    display.textContent = keyContent;
+                    display.innerText = keyContent;
                     calculator.dataset.previousKeyType = "number";
-                } else display.textContent = displayContent + keyContent;
+                } else display.innerText = displayContent + keyContent;
             }
             if (
                 action === "plus" ||
@@ -42,15 +51,15 @@ btn.forEach((item) =>
                 action === "times" ||
                 action === "slash"
             ) {
-                key.classList.add("active");
+                item.classList.add("active");
                 calculator.dataset.previousKeyType = "operator";
                 calculator.dataset.firstValue = displayContent;
                 calculator.dataset.operator = action;
-                print((calculator.dataset.firstValue = displayContent));
-                print((calculator.dataset.operator = action));
+                // print((calculator.dataset.firstValue = displayContent));
+                // print((calculator.dataset.operator = action))
             }
             if (action === "dot") {
-                display.textContent = displayContent + ".";
+                display.innerText = displayContent + ".";
             }
             if (action === "equals") {
                 const firstValue = calculator.dataset.firstValue;
@@ -60,7 +69,7 @@ btn.forEach((item) =>
                 const secondvalue = displayContent;
                 print(secondvalue);
 
-                display.textContent = calculate(
+                display.innerText = calculate(
                     firstValue,
                     operator,
                     secondvalue
