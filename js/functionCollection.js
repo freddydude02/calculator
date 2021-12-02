@@ -51,7 +51,7 @@ export const equalsFunc = (clickedBtn) => {
     const operator = calculator.dataset.operator;
     const SecondValue = display.innerText;
 
-    if (firstValue) {
+    if (firstValue && calculator.dataset.prevKeyType !== "operator") {
         if (calculator.dataset.prevKeyType !== "equals") {
             calculator.dataset.previousSecondValue = SecondValue;
         }
