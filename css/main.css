@@ -14,18 +14,33 @@
 }
 
 .calc {
-  display: grid;
   gap: 10px;
-  height: 100%;
-  width: 100%;
+  height: 70%;
+  width: 45%;
   padding: 30px;
+  display: grid;
   background-color: #3b3434;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: "disp disp disp disp" " ac ac slash time" " seven eight nine minus" "four five six plus" "one two three equals" "zit zit dott equals";
 }
+.calc__display {
+  display: flex;
+  flex-direction: unset;
+  justify-content: end;
+  align-items: unset;
+  grid-area: disp;
+  background-color: #4d4b4b;
+  font-size: 5vw;
+  margin-top: 30px;
+}
 .calc__btn {
   background-color: yellow;
+  display: flex;
+  flex-direction: unset;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
 }
 .calc__btn--1 {
   grid-area: one;
@@ -82,10 +97,9 @@
 }
 .calc__btn--ac {
   grid-area: ac;
-  background-color: maroon;
+  background-color: crimson;
 }
-.calc__display {
-  grid-area: disp;
-  background-color: #4d4b4b;
-  margin-top: 30px;
+
+.active {
+  background-color: #4b5050;
 }
