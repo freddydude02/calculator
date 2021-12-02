@@ -9,6 +9,5 @@ export const calculate = (n1, operator, n2) => {
     } else if (operator === "slash") {
         result = parseFloat(n1) / parseFloat(n2);
     }
-    print(result);
     return result;
 };
