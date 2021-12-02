@@ -16,7 +16,6 @@ const onPageLoad = () => {
         } else if (operator === "slash") {
             result = parseFloat(n1) / parseFloat(n2);
         }
-        console.log(result);
         return result;
     };
 
@@ -45,7 +44,10 @@ const onPageLoad = () => {
         const firstValue = calculator.dataset.firstValue;
         const operator = calculator.dataset.operator;
         const SecondValue = display.innerText;
-        calculate(firstValue, operator, SecondValue);
+
+        if (calculate(firstValue, operator, SecondValue)) {
+            display.innerText = calculate(firstValue, operator, SecondValue);
+        }
     };
     const dotFunc = (clickedBtn) => {
         log(calculator.dataset.prevKeyType);
