@@ -1,0 +1,105 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.page {
+    display: flex;
+    flex-direction: unset;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: darkslategray;
+}
+
+.calc {
+    gap: 10px;
+    height: 70%;
+    width: 45%;
+    padding: 30px;
+    display: grid;
+    background-color: #3b3434;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "disp disp disp disp" " ac ac slash time" " seven eight nine minus" "four five six plus" "one two three equals" "zit zit dott equals";
+}
+.calc__display {
+    display: flex;
+    flex-direction: unset;
+    justify-content: end;
+    align-items: unset;
+    grid-area: disp;
+    background-color: #4d4b4b;
+    font-size: 5vw;
+    margin-top: 30px;
+}
+.calc__btn {
+    background-color: yellow;
+    display: flex;
+    flex-direction: unset;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+}
+.calc__btn--1 {
+    grid-area: one;
+}
+.calc__btn--2 {
+    grid-area: two;
+}
+.calc__btn--3 {
+    grid-area: three;
+}
+.calc__btn--4 {
+    grid-area: four;
+}
+.calc__btn--5 {
+    grid-area: five;
+}
+.calc__btn--6 {
+    grid-area: six;
+}
+.calc__btn--7 {
+    grid-area: seven;
+}
+.calc__btn--8 {
+    grid-area: eight;
+}
+.calc__btn--9 {
+    grid-area: nine;
+}
+.calc__btn--0 {
+    grid-area: zit;
+}
+.calc__btn--dot {
+    grid-area: dott;
+}
+.calc__btn--equals {
+    grid-area: equals;
+    background-color: steelblue;
+}
+.calc__btn--slash {
+    grid-area: slash;
+    background-color: gray;
+}
+.calc__btn--times {
+    grid-area: time;
+    background-color: gray;
+}
+.calc__btn--minus {
+    grid-area: minus;
+    background-color: gray;
+}
+.calc__btn--plus {
+    grid-area: plus;
+    background-color: gray;
+}
+.calc__btn--ac {
+    grid-area: ac;
+    background-color: crimson;
+}
+
+.active {
+    background-color: #4b5050;
+}
